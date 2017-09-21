@@ -14,7 +14,7 @@ import org.springframework.cloud.netflix.eureka.server.EnableEurekaServer;
 @RestController
 public class Hello {
 
-	@RequestMapping("/")
+	@RequestMapping("/hello")
 	public String home() {
 		return "Hello World ! I am Sibendu.";
 	}
