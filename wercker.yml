@@ -18,3 +18,12 @@ build:
         name: gradle build
         code: |
           ./gradlew --full-stacktrace -q --project-cache-dir=$WERCKER_CACHE_DIR build
+push:
+  steps:
+    # Push to public docker repo
+    - internal/docker-push: 
+        username: $DOCKER_USERNAME
+        password: $DOCKER_PASSWORD
+        tag:  my-amazing-tag
+        repository: $DOCKER_REPOSITORY
+        registry: https://registry.hub.docker.com
